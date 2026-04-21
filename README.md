@@ -188,7 +188,11 @@ Standard enterprise governance frameworks assume stable connectivity, permanent 
 
 ## Author
 
+<<<<<<< HEAD
 **Serge-Alain NYAMSIN** — GIS Data Governance & Humanitarian Data Engineering  
+=======
+**Trésor Serge-Alain NYAMSIN** — GIS Data Governance & Humanitarian Data Engineering  
+>>>>>>> fd093af (replace  placeholders)
 [github.com/sanyamsin](https://github.com/sanyamsin) | [huggingface.co/Lokozu](https://huggingface.co/Lokozu)
 
 12+ years of field data management experience across Sub-Saharan Africa (RCA, Mauritania, Senegal).  
