@@ -1,0 +1,158 @@
+# ============================================================
+# GIS Data Stewardship Register
+# Aligned with DAMA-DMBOK v2 — Chapter 3: Data Governance
+# Version: 1.0 | Last updated: 2026-04
+# ============================================================
+
+metadata:
+  title: "GIS Data Stewardship Register"
+  version: "1.0"
+  owner: "Data Governance Specialist"
+  last_reviewed: "2026-04"
+  next_review: "2027-04"
+
+# ── STEWARDSHIP ROLE DEFINITIONS ────────────────────────────
+role_definitions:
+  - role: "Data Owner"
+    level: "Strategic"
+    dama_reference: "DMBOK2 Ch.3 §3.2"
+    responsibilities:
+      - "Accountable for data domain business outcomes"
+      - "Approves data policies and classification decisions"
+      - "Authorizes access to confidential/sensitive datasets"
+      - "Signs off on data disposal decisions"
+
+  - role: "Data Steward"
+    level: "Operational"
+    dama_reference: "DMBOK2 Ch.3 §3.3"
+    responsibilities:
+      - "Maintains metadata records for assigned domain"
+      - "Monitors and acts on automated quality alerts"
+      - "Documents lineage for all managed datasets"
+      - "Coordinates with field teams for data acquisition standards"
+      - "Participates in Data Stewardship Council meetings"
+
+  - role: "Data Custodian"
+    level: "Technical"
+    dama_reference: "DMBOK2 Ch.3 §3.4"
+    responsibilities:
+      - "Manages physical storage and database infrastructure"
+      - "Implements access controls per classification policy"
+      - "Executes automated quality pipeline maintenance"
+      - "Manages backups and disaster recovery"
+
+  - role: "Data Consumer"
+    level: "User"
+    dama_reference: "DMBOK2 Ch.3 §3.5"
+    responsibilities:
+      - "Uses data according to its classification level"
+      - "Reports quality issues to assigned Data Steward"
+      - "Documents usage context in data catalogue"
+
+# ── DOMAIN STEWARDSHIP ASSIGNMENTS ──────────────────────────
+stewardship_assignments:
+  - domain_id: "DD01"
+    domain_name: "Reference Geospatial Data"
+    data_owner:
+      title: "GIS Centre Director"
+      contact: "[director@gis-centre.org]"
+    data_steward:
+      title: "Senior GIS Analyst — Reference Data"
+      contact: "[steward-ref@gis-centre.org]"
+      backup: "[backup-steward-ref@gis-centre.org]"
+    data_custodian:
+      title: "GIS Database Administrator"
+      contact: "[dba@gis-centre.org]"
+    datasets_managed:
+      - "OCHA Common Operational Datasets (CODs)"
+      - "GADM Administrative Boundaries"
+      - "OpenStreetMap Extracts (HOT)"
+      - "Satellite Base Imagery"
+    escalation_path: "Steward → Data Governance Specialist → Director"
+
+  - domain_id: "DD02"
+    domain_name: "Operational Field Data"
+    data_owner:
+      title: "Head of Operations"
+      contact: "[ops-head@gis-centre.org]"
+    data_steward:
+      title: "GIS Field Data Coordinator"
+      contact: "[steward-ops@gis-centre.org]"
+      backup: "[backup-steward-ops@gis-centre.org]"
+    data_custodian:
+      title: "GIS Database Administrator"
+      contact: "[dba@gis-centre.org]"
+    datasets_managed:
+      - "Beneficiary Registration Points"
+      - "Intervention Zone Polygons"
+      - "Field Assessment Surveys (KoboToolbox)"
+      - "Program Activity Locations"
+    escalation_path: "Steward → Data Governance Specialist → Ops Head"
+
+  - domain_id: "DD03"
+    domain_name: "Health & Epidemiological Data"
+    data_owner:
+      title: "Medical Director"
+      contact: "[medical@gis-centre.org]"
+    data_steward:
+      title: "GIS Health Data Analyst"
+      contact: "[steward-health@gis-centre.org]"
+      backup: "[backup-steward-health@gis-centre.org]"
+    data_custodian:
+      title: "GIS Database Administrator"
+      contact: "[dba@gis-centre.org]"
+    datasets_managed:
+      - "Health Facility Locations"
+      - "Disease Surveillance Grids"
+      - "Catchment Area Polygons"
+      - "Patient Flow Aggregates (anonymized)"
+    escalation_path: "Steward → Data Governance Specialist → Medical Director"
+
+  - domain_id: "DD04"
+    domain_name: "Logistics & Supply Chain Data"
+    data_owner:
+      title: "Head of Logistics"
+      contact: "[log-head@gis-centre.org]"
+    data_steward:
+      title: "GIS Logistics Analyst"
+      contact: "[steward-log@gis-centre.org]"
+      backup: "[backup-steward-log@gis-centre.org]"
+    data_custodian:
+      title: "GIS Database Administrator"
+      contact: "[dba@gis-centre.org]"
+    datasets_managed:
+      - "Supply Route Networks"
+      - "Warehouse & Storage Points"
+      - "Customs and Border Crossing Points"
+      - "Vehicle Movement Tracks (aggregated)"
+    escalation_path: "Steward → Data Governance Specialist → Log Head"
+
+  - domain_id: "DD05"
+    domain_name: "Context & Security Data"
+    data_owner:
+      title: "Head of Security"
+      contact: "[security@gis-centre.org]"
+    data_steward:
+      title: "GIS Security Analyst"
+      contact: "[steward-sec@gis-centre.org]"
+      backup: "[backup-steward-sec@gis-centre.org]"
+    data_custodian:
+      title: "GIS Database Administrator"
+      contact: "[dba@gis-centre.org]"
+    datasets_managed:
+      - "Conflict Event Data (ACLED)"
+      - "Access Constraint Zones"
+      - "Security Incident Locations (anonymized)"
+      - "Movement Restriction Areas"
+    escalation_path: "Steward → Data Governance Specialist → Security Head"
+
+# ── ONBOARDING CHECKLIST FOR NEW STEWARDS ───────────────────
+steward_onboarding_checklist:
+  - task: "Complete governance framework orientation (2h)"
+  - task: "Read DAMA-DMBOK v2 Chapter 3 summary"
+  - task: "Review assigned domain metadata records"
+  - task: "Access granted to data catalogue and quality dashboard"
+  - task: "Added to Data Stewardship Council mailing list"
+  - task: "First stewardship council meeting attended"
+  - task: "Backup steward identified and confirmed"
+  - task: "Escalation path documented and tested"

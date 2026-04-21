@@ -1,0 +1,192 @@
+# ============================================================
+# Humanitarian GIS Data Governance Policy
+# Aligned with DAMA-DMBOK v2 Framework
+# Version: 1.0 | Last updated: 2026-04
+# ============================================================
+
+metadata:
+  title: "Humanitarian GIS Data Governance Policy"
+  version: "1.0"
+  framework_alignment: "DAMA-DMBOK v2"
+  scope: "Geospatial and operational data managed by the GIS Centre"
+  review_cycle: "Annual or upon major operational change"
+  owner: "Data Management Lead"
+
+# ── 1. PRINCIPLES ────────────────────────────────────────────
+principles:
+  - id: P01
+    name: "Data as a Strategic Asset"
+    description: >
+      Geospatial and operational data are critical assets. They must be
+      managed with the same rigor as financial or human resources.
+
+  - id: P02
+    name: "Fitness for Purpose"
+    description: >
+      Data quality is assessed relative to the operational or analytical
+      use case. Humanitarian operations require timely, accurate,
+      and spatially coherent data.
+
+  - id: P03
+    name: "Accountability & Stewardship"
+    description: >
+      Every dataset has an assigned Data Steward responsible for its
+      quality, documentation, and lifecycle management.
+
+  - id: P04
+    name: "Transparency & Lineage"
+    description: >
+      Data transformations and origins must be traceable. Lineage
+      documentation is mandatory for all reference datasets.
+
+  - id: P05
+    name: "Security & Do No Harm"
+    description: >
+      Geospatial data that could expose vulnerable populations,
+      staff locations, or sensitive operations must be classified
+      and access-controlled accordingly.
+
+  - id: P06
+    name: "Interoperability"
+    description: >
+      Datasets must conform to open international standards
+      (ISO 19115, OGC, INSPIRE) to enable cross-sector sharing.
+
+# ── 2. DATA DOMAINS ──────────────────────────────────────────
+data_domains:
+  - id: DD01
+    name: "Reference Geospatial Data"
+    description: "Administrative boundaries, base maps, infrastructure layers"
+    classification: "Public / Restricted"
+    update_frequency: "Quarterly"
+    primary_steward: "GIS Data Steward - Reference"
+    standards: ["ISO 19115", "OGC WFS/WMS", "INSPIRE"]
+
+  - id: DD02
+    name: "Operational Field Data"
+    description: "Beneficiary locations, intervention zones, field assessments"
+    classification: "Restricted / Confidential"
+    update_frequency: "Weekly or real-time"
+    primary_steward: "GIS Data Steward - Operations"
+    standards: ["ISO 19115", "KoboToolbox schema", "HDX CKAN"]
+
+  - id: DD03
+    name: "Health & Epidemiological Data"
+    description: "Disease surveillance, health facility catchment areas, patient flows"
+    classification: "Confidential"
+    update_frequency: "Weekly"
+    primary_steward: "GIS Data Steward - Health"
+    standards: ["ISO 19115", "FHIR GeoExtension", "WHO IHR"]
+
+  - id: DD04
+    name: "Logistics & Supply Chain Data"
+    description: "Movement corridors, warehouse locations, supply routes"
+    classification: "Restricted"
+    update_frequency: "Monthly"
+    primary_steward: "GIS Data Steward - Logistics"
+    standards: ["ISO 19115", "UN OCHA CODs"]
+
+  - id: DD05
+    name: "Context & Security Data"
+    description: "Conflict zones, access constraints, security incidents"
+    classification: "Confidential / Sensitive"
+    update_frequency: "As needed / real-time"
+    primary_steward: "GIS Data Steward - Security"
+    standards: ["ISO 19115", "ACLED schema"]
+
+# ── 3. DATA CLASSIFICATION ────────────────────────────────────
+data_classification:
+  levels:
+    - level: "Public"
+      description: "Freely shareable. No harm risk if disclosed."
+      access: "All staff, partners, public"
+      examples: ["Administrative boundaries", "OpenStreetMap layers"]
+
+    - level: "Restricted"
+      description: "For internal/partner use only."
+      access: "GIS Centre staff and authorized partners"
+      examples: ["Operational maps", "Infrastructure surveys"]
+
+    - level: "Confidential"
+      description: "Sensitive data. Disclosure could cause harm."
+      access: "Named individuals or teams only"
+      examples: ["Beneficiary locations", "Security incident data"]
+
+    - level: "Sensitive"
+      description: "Highest protection. Exposure could endanger lives."
+      access: "Strictly need-to-know basis"
+      examples: ["Staff locations in conflict zones", "Health patient data"]
+
+# ── 4. DATA LIFECYCLE MANAGEMENT ────────────────────────────
+data_lifecycle:
+  stages:
+    - stage: "Creation / Acquisition"
+      requirements:
+        - "Source documented in metadata record"
+        - "Classification level assigned at ingestion"
+        - "Steward assigned before storage"
+
+    - stage: "Storage & Organization"
+      requirements:
+        - "Stored in designated geodatabase (PostGIS or ArcGIS Enterprise)"
+        - "File naming convention applied"
+        - "Backup verified within 24h"
+
+    - stage: "Quality Assurance"
+      requirements:
+        - "Automated quality checks executed upon ingestion"
+        - "QA report generated and archived"
+        - "Issues logged in incident register"
+
+    - stage: "Publishing & Distribution"
+      requirements:
+        - "Metadata record published in data catalogue"
+        - "Access level verified before sharing"
+        - "Distribution log maintained"
+
+    - stage: "Maintenance & Update"
+      requirements:
+        - "Update frequency respected per domain policy"
+        - "Change log maintained"
+        - "Version history preserved"
+
+    - stage: "Archiving & Disposal"
+      requirements:
+        - "Retention period defined per domain"
+        - "Disposal requires steward approval"
+        - "Audit trail maintained post-disposal"
+
+# ── 5. GOVERNANCE BODIES ─────────────────────────────────────
+governance_bodies:
+  - body: "Data Governance Committee"
+    role: "Strategic oversight, policy approval, escalation resolution"
+    composition: ["Data Management Lead", "GIS Centre Director", "IT Representative", "Operations Representative"]
+    meeting_frequency: "Quarterly"
+
+  - body: "Data Stewardship Council"
+    role: "Operational governance, standards enforcement, cross-domain coordination"
+    composition: ["Domain Data Stewards (DD01–DD05)", "Data Governance Specialist"]
+    meeting_frequency: "Monthly"
+
+  - body: "Data Quality Working Group"
+    role: "Monitor automated quality checks, triage incidents, propose remediation"
+    composition: ["Data Governance Specialist", "GIS Analysts", "Field Data Officers"]
+    meeting_frequency: "Bi-weekly"
+
+# ── 6. COMPLIANCE & ENFORCEMENT ──────────────────────────────
+compliance:
+  mandatory_items:
+    - "All datasets must have a metadata record before use in operations"
+    - "Quality checks must pass before data is promoted to production"
+    - "Data breaches must be reported to the Governance Committee within 48h"
+    - "Stewardship assignments reviewed annually"
+
+  non_compliance_process:
+    - step: 1
+      action: "Automated alert to Data Steward"
+    - step: 2
+      action: "Escalation to Data Governance Specialist after 5 business days"
+    - step: 3
+      action: "Escalation to Data Governance Committee after 15 business days"
+    - step: 4
+      action: "Documented in governance audit log"
