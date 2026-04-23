@@ -187,6 +187,10 @@ Standard enterprise governance frameworks assume stable connectivity, permanent 
 ---
 
 ## Author
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 **Serge-Alain NYAMSIN** — GIS Data Governance & Humanitarian Data Engineering  
 [github.com/sanyamsin](https://github.com/sanyamsin) | [huggingface.co/Lokozu](https://huggingface.co/Lokozu)
 
