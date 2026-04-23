@@ -1,0 +1,129 @@
+{
+  "org_name": "Demo — Humanitarian GIS Centre",
+  "assessment_date": "2026-04-23",
+  "assessor": "T. [Nom] — Data Governance Specialist",
+  "overall_score": 1.4,
+  "overall_pct": 35.0,
+  "maturity_label": "Managed (Level 1–2)",
+  "critical_gaps": [
+    "D01",
+    "D02",
+    "D04",
+    "D06",
+    "D08",
+    "D09"
+  ],
+  "dimensions": [
+    {
+      "id": "D01",
+      "name": "Data Governance Strategy",
+      "dama_chapter": "DMBOK2 Ch.3",
+      "score": 1,
+      "level_label": "Managed",
+      "score_pct": 25.0,
+      "priority": "critical",
+      "evidence": "Basic policy document exists but not reviewed since 2023. No stewards formally assigned.",
+      "next_level_target": "Formal framework documented. Stewards assigned. Partial adoption."
+    },
+    {
+      "id": "D02",
+      "name": "Metadata Management",
+      "dama_chapter": "DMBOK2 Ch.12",
+      "score": 1,
+      "level_label": "Managed",
+      "score_pct": 25.0,
+      "priority": "critical",
+      "evidence": "Some datasets have README files. No ISO 19115 schema applied.",
+      "next_level_target": "Metadata schema defined (ISO 19115). Partially applied."
+    },
+    {
+      "id": "D03",
+      "name": "Data Quality Management",
+      "dama_chapter": "DMBOK2 Ch.13",
+      "score": 2,
+      "level_label": "Defined",
+      "score_pct": 50.0,
+      "priority": "critical",
+      "evidence": "Manual quality checks on CODs only. No automated pipeline.",
+      "next_level_target": "Automated quality pipeline covering all production datasets. SLAs defined."
+    },
+    {
+      "id": "D04",
+      "name": "Data Lineage & Provenance",
+      "dama_chapter": "DMBOK2 Ch.11",
+      "score": 1,
+      "level_label": "Managed",
+      "score_pct": 25.0,
+      "priority": "high",
+      "evidence": "Source documented for CODs. No lineage for field data.",
+      "next_level_target": "Lineage documented manually for key datasets."
+    },
+    {
+      "id": "D05",
+      "name": "Data Architecture & Integration",
+      "dama_chapter": "DMBOK2 Ch.5",
+      "score": 2,
+      "level_label": "Defined",
+      "score_pct": 50.0,
+      "priority": "high",
+      "evidence": "PostGIS in use for reference data. Field data in scattered shapefiles.",
+      "next_level_target": "Standardized data models. Automated ETL pipelines. API integrations active."
+    },
+    {
+      "id": "D06",
+      "name": "Data Security & Classification",
+      "dama_chapter": "DMBOK2 Ch.7",
+      "score": 1,
+      "level_label": "Managed",
+      "score_pct": 25.0,
+      "priority": "critical",
+      "evidence": "Sensitive data flagged informally. No access control enforcement.",
+      "next_level_target": "Classification policy defined. Partially implemented."
+    },
+    {
+      "id": "D07",
+      "name": "Reference & Master Data Management",
+      "dama_chapter": "DMBOK2 Ch.10",
+      "score": 2,
+      "level_label": "Defined",
+      "score_pct": 50.0,
+      "priority": "high",
+      "evidence": "OCHA CODs used as reference. Multiple versions of admin boundaries in circulation.",
+      "next_level_target": "Golden record management. Change notification to consumers. Full versioning."
+    },
+    {
+      "id": "D08",
+      "name": "Data Catalogue & Discovery",
+      "dama_chapter": "DMBOK2 Ch.12",
+      "score": 1,
+      "level_label": "Managed",
+      "score_pct": 25.0,
+      "priority": "high",
+      "evidence": "SharePoint list exists but last updated 8 months ago.",
+      "next_level_target": "Formal catalogue deployed (CKAN or equivalent). Partially populated."
+    },
+    {
+      "id": "D09",
+      "name": "Data Lifecycle Management",
+      "dama_chapter": "DMBOK2 Ch.9",
+      "score": 1,
+      "level_label": "Managed",
+      "score_pct": 25.0,
+      "priority": "medium",
+      "evidence": "No formal retention policy. Archived data mixed with active data.",
+      "next_level_target": "Retention policy documented per domain. Partially enforced."
+    },
+    {
+      "id": "D10",
+      "name": "Governance Culture & Training",
+      "dama_chapter": "DMBOK2 Ch.3",
+      "score": 2,
+      "level_label": "Defined",
+      "score_pct": 50.0,
+      "priority": "medium",
+      "evidence": "Stewards aware of governance needs. No formal training materials.",
+      "next_level_target": "Mandatory onboarding. Regular training. Governance champions in field teams."
+    }
+  ],
+  "notes": "Baseline assessment. Priority: establish formal stewardship and automated quality pipeline."
+}

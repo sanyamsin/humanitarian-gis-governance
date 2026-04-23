@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GIS Governance Maturity Report — Demo — Humanitarian GIS Centre</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 14px; color: #2c3e50; background: #f8f9fa; padding: 2rem; }
+  .container { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 2.5rem; }
+  h1 { font-size: 24px; color: #1A3C5E; border-bottom: 3px solid #2E6DA4; padding-bottom: 0.75rem; margin-bottom: 0.5rem; }
+  h2 { font-size: 18px; color: #1A3C5E; margin: 2rem 0 1rem; }
+  .meta { font-size: 13px; color: #777; margin-bottom: 2rem; }
+  .score-card { display: flex; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .card { flex: 1; min-width: 180px; padding: 1.25rem; border-radius: 8px; background: #f0f5fb; border: 1px solid #d0e0f0; text-align: center; }
+  .card .num { font-size: 36px; font-weight: bold; color: #E67E22; }
+  .card .lbl { font-size: 12px; color: #888; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+  th { background: #1A3C5E; color: #fff; padding: 0.6rem 0.8rem; text-align: left; font-size: 13px; }
+  td { padding: 0.6rem 0.8rem; border-bottom: 1px solid #eee; font-size: 13px; vertical-align: middle; }
+  tr:hover { background: #f8fbff; }
+  .bar-track { background: #eee; border-radius: 4px; height: 8px; width: 120px; }
+  .bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+  .evidence { font-size: 11px; color: #666; padding: 4px 8px; background: #f9f9f9; border-left: 3px solid #2E6DA4; margin: 2px 0 6px; }
+  .priority { font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+  .critical { background: #fde8e8; color: #C0392B; }
+  .high { background: #fef3e2; color: #D68910; }
+  .medium { background: #e8f8f5; color: #1E8449; }
+  .low { background: #eaf0fb; color: #2E6DA4; }
+  ul.gaps { padding-left: 1.2rem; line-height: 2; }
+  ul.gaps li { margin-bottom: 0.3rem; }
+  .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 12px; color: #aaa; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>GIS Data Governance Maturity Report</h1>
+  <div class="meta">
+    Organization: <strong>Demo — Humanitarian GIS Centre</strong> &nbsp;|&nbsp;
+    Date: <strong>2026-04-23</strong> &nbsp;|&nbsp;
+    Assessor: <strong>T. [Nom] — Data Governance Specialist</strong> &nbsp;|&nbsp;
+    Framework: <strong>DAMA-DMBOK v2</strong>
+  </div>
+
+  <div class="score-card">
+    <div class="card">
+      <div class="num">1.4<span style="font-size:18px;color:#aaa">/4</span></div>
+      <div class="lbl">Overall Maturity Score</div>
+    </div>
+    <div class="card">
+      <div class="num">35<span style="font-size:18px;color:#aaa">%</span></div>
+      <div class="lbl">Maturity Percentage</div>
+    </div>
+    <div class="card">
+      <div class="num" style="font-size:18px;padding-top:8px;">Managed (Level 1–2)</div>
+      <div class="lbl">Maturity Level</div>
+    </div>
+    <div class="card">
+      <div class="num" style="color:#E74C3C;">6</div>
+      <div class="lbl">Critical Gaps (Level ≤ 1)</div>
+    </div>
+  </div>
+
+  <h2>Dimension Scores</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Dimension</th><th>Progress</th>
+        <th>Score</th><th>Level</th><th>Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><strong>D01</strong></td>
+          <td>Data Governance Strategy<br><small style="color:#888">DMBOK2 Ch.3</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:25.0%;background:#E67E22;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#E67E22;">1/4</td>
+          <td style="color:#E67E22;font-size:12px;">Managed</td>
+          <td class="priority critical">CRITICAL</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">Basic policy document exists but not reviewed since 2023. No stewards formally assigned.</div></td></tr>
+        
+        <tr>
+          <td><strong>D02</strong></td>
+          <td>Metadata Management<br><small style="color:#888">DMBOK2 Ch.12</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:25.0%;background:#E67E22;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#E67E22;">1/4</td>
+          <td style="color:#E67E22;font-size:12px;">Managed</td>
+          <td class="priority critical">CRITICAL</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">Some datasets have README files. No ISO 19115 schema applied.</div></td></tr>
+        
+        <tr>
+          <td><strong>D03</strong></td>
+          <td>Data Quality Management<br><small style="color:#888">DMBOK2 Ch.13</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:50.0%;background:#F1C40F;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#F1C40F;">2/4</td>
+          <td style="color:#F1C40F;font-size:12px;">Defined</td>
+          <td class="priority critical">CRITICAL</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">Manual quality checks on CODs only. No automated pipeline.</div></td></tr>
+        
+        <tr>
+          <td><strong>D04</strong></td>
+          <td>Data Lineage & Provenance<br><small style="color:#888">DMBOK2 Ch.11</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:25.0%;background:#E67E22;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#E67E22;">1/4</td>
+          <td style="color:#E67E22;font-size:12px;">Managed</td>
+          <td class="priority high">HIGH</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">Source documented for CODs. No lineage for field data.</div></td></tr>
+        
+        <tr>
+          <td><strong>D05</strong></td>
+          <td>Data Architecture & Integration<br><small style="color:#888">DMBOK2 Ch.5</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:50.0%;background:#F1C40F;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#F1C40F;">2/4</td>
+          <td style="color:#F1C40F;font-size:12px;">Defined</td>
+          <td class="priority high">HIGH</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">PostGIS in use for reference data. Field data in scattered shapefiles.</div></td></tr>
+        
+        <tr>
+          <td><strong>D06</strong></td>
+          <td>Data Security & Classification<br><small style="color:#888">DMBOK2 Ch.7</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:25.0%;background:#E67E22;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#E67E22;">1/4</td>
+          <td style="color:#E67E22;font-size:12px;">Managed</td>
+          <td class="priority critical">CRITICAL</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">Sensitive data flagged informally. No access control enforcement.</div></td></tr>
+        
+        <tr>
+          <td><strong>D07</strong></td>
+          <td>Reference & Master Data Management<br><small style="color:#888">DMBOK2 Ch.10</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:50.0%;background:#F1C40F;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#F1C40F;">2/4</td>
+          <td style="color:#F1C40F;font-size:12px;">Defined</td>
+          <td class="priority high">HIGH</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">OCHA CODs used as reference. Multiple versions of admin boundaries in circulation.</div></td></tr>
+        
+        <tr>
+          <td><strong>D08</strong></td>
+          <td>Data Catalogue & Discovery<br><small style="color:#888">DMBOK2 Ch.12</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:25.0%;background:#E67E22;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#E67E22;">1/4</td>
+          <td style="color:#E67E22;font-size:12px;">Managed</td>
+          <td class="priority high">HIGH</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">SharePoint list exists but last updated 8 months ago.</div></td></tr>
+        
+        <tr>
+          <td><strong>D09</strong></td>
+          <td>Data Lifecycle Management<br><small style="color:#888">DMBOK2 Ch.9</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:25.0%;background:#E67E22;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#E67E22;">1/4</td>
+          <td style="color:#E67E22;font-size:12px;">Managed</td>
+          <td class="priority medium">MEDIUM</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">No formal retention policy. Archived data mixed with active data.</div></td></tr>
+        
+        <tr>
+          <td><strong>D10</strong></td>
+          <td>Governance Culture & Training<br><small style="color:#888">DMBOK2 Ch.3</small></td>
+          <td>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:50.0%;background:#F1C40F;"></div>
+            </div>
+          </td>
+          <td style="text-align:center;font-weight:bold;color:#F1C40F;">2/4</td>
+          <td style="color:#F1C40F;font-size:12px;">Defined</td>
+          <td class="priority medium">MEDIUM</td>
+        </tr>
+        <tr><td colspan="6"><div class="evidence">Stewards aware of governance needs. No formal training materials.</div></td></tr>
+        </tbody>
+  </table>
+
+  <h2>Critical Gaps</h2>
+  <ul class="gaps"><li><strong>D01 — Data Governance Strategy</strong> (Level 1): Basic policies exist but not enforced. No assigned stewards.</li><li><strong>D02 — Metadata Management</strong> (Level 1): Some informal README files. No standard schema.</li><li><strong>D04 — Data Lineage & Provenance</strong> (Level 1): Informal notes on some datasets. No structured lineage.</li><li><strong>D06 — Data Security & Classification</strong> (Level 1): Informal sensitivity awareness. No formal classification scheme.</li><li><strong>D08 — Data Catalogue & Discovery</strong> (Level 1): Shared spreadsheet or SharePoint list. Incomplete and outdated.</li><li><strong>D09 — Data Lifecycle Management</strong> (Level 1): Informal retention awareness. No documented policy.</li></ul>
+
+  <h2>Improvement Roadmap</h2>
+  <ul class="gaps"><li><strong>D01 Data Governance Strategy</strong> → Target Level 2: Formal framework documented. Stewards assigned. Partial adoption.</li><li><strong>D02 Metadata Management</strong> → Target Level 2: Metadata schema defined (ISO 19115). Partially applied.</li><li><strong>D04 Data Lineage & Provenance</strong> → Target Level 2: Lineage documented manually for key datasets.</li><li><strong>D06 Data Security & Classification</strong> → Target Level 2: Classification policy defined. Partially implemented.</li><li><strong>D08 Data Catalogue & Discovery</strong> → Target Level 2: Formal catalogue deployed (CKAN or equivalent). Partially populated.</li><li><strong>D09 Data Lifecycle Management</strong> → Target Level 2: Retention policy documented per domain. Partially enforced.</li><li><strong>D03 Data Quality Management</strong> → Target Level 3: Automated quality pipeline covering all production datasets. SLAs defined.</li><li><strong>D05 Data Architecture & Integration</strong> → Target Level 3: Standardized data models. Automated ETL pipelines. API integrations active.</li></ul>
+
+  <h2>Notes</h2><p>Baseline assessment. Priority: establish formal stewardship and automated quality pipeline.</p>
+
+  <div class="footer">
+    Generated by humanitarian-gis-governance v1.0 &nbsp;|&nbsp;
+    github.com/sanyamsin/humanitarian-gis-governance &nbsp;|&nbsp;
+    DAMA-DMBOK v2 aligned
+  </div>
+</div>
+</body>
+</html>
